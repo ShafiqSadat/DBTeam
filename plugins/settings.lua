@@ -18,7 +18,7 @@ do
 local function create_group(msg, group_name)
     local group_creator = msg.from.print_name
     create_group_chat(group_creator, group_name, ok_cb, false)
-    return 'ℹ️ '..lang_text(msg.to.id, 'createGroup:1')..' "'..string.gsub(group_name, '_', ' ')..'" '..lang_text(msg.to.id, 'createGroup:2')
+    return '👹 '..lang_text(msg.to.id, 'createGroup:1')..' "'..string.gsub(group_name, '_', ' ')..'" '..lang_text(msg.to.id, 'createGroup:2')
 end
 
 local function remove_message(extra, success, result)
@@ -197,17 +197,17 @@ local function run(msg, matches)
                         hash = 'stickers:'..msg.to.id
                         redis:del(hash)
                         if msg.to.type == 'chat' then
-                            send_msg('chat#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'stickersT'), ok_cb, false)
+                            send_msg('chat#id'..msg.to.id, '👹 '..lang_text(msg.to.id, 'stickersT'), ok_cb, false)
                         elseif msg.to.type == 'channel' then
-                            send_msg('channel#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'stickersL'), ok_cb, false)
+                            send_msg('channel#id'..msg.to.id, '👹 '..lang_text(msg.to.id, 'stickersL'), ok_cb, false)
                         end
                     elseif matches[3] == 'disable' then
                         hash = 'stickers:'..msg.to.id
                         redis:set(hash, true)
                         if msg.to.type == 'chat' then
-                            send_msg('chat#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'noStickersT'), ok_cb, false)
+                            send_msg('chat#id'..msg.to.id, '🐴 '..lang_text(msg.to.id, 'noStickersT'), ok_cb, false)
                         elseif msg.to.type == 'channel' then
-                            send_msg('channel#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'noStickersL'), ok_cb, false)
+                            send_msg('channel#id'..msg.to.id, '🐴 '..lang_text(msg.to.id, 'noStickersL'), ok_cb, false)
                         end
                     end
                     return
@@ -216,17 +216,17 @@ local function run(msg, matches)
                      hash = 'tgservices:'..msg.to.id
                      redis:del(hash)
                        	if msg.to.type == 'chat' then
-              		     send_msg('chat#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'tgservicesT'), ok_cb, false)
+              		     send_msg('chat#id'..msg.to.id, '🤖 '..lang_text(msg.to.id, 'tgservicesT'), ok_cb, false)
                              elseif msg.to.type == 'channel' then
-                       		send_msg('channel#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'tgservicesL'), ok_cb, false)
+                       		send_msg('channel#id'..msg.to.id, '🤖 '..lang_text(msg.to.id, 'tgservicesL'), ok_cb, false)
                 	     end
                     elseif matches[3] == 'disable' then
                        	hash = 'tgservices:'..msg.to.id
                 	redis:set(hash, true)
                 	if msg.to.type == 'chat' then
-                       	    send_msg('chat#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'noTgservicesT'), ok_cb, false)
+                       	    send_msg('chat#id'..msg.to.id, '🌞 '..lang_text(msg.to.id, 'noTgservicesT'), ok_cb, false)
                        	elseif msg.to.type == 'channel' then
-                       	   send_msg('channel#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'noTgservicesL'), ok_cb, false)
+                       	   send_msg('channel#id'..msg.to.id, '🌞 '..lang_text(msg.to.id, 'noTgservicesL'), ok_cb, false)
                 	end
                     end
                     return
@@ -235,17 +235,17 @@ local function run(msg, matches)
                         hash = 'gifs:'..msg.to.id
                         redis:del(hash)
                         if msg.to.type == 'chat' then
-                            send_msg('chat#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'gifsT'), ok_cb, false)
+                            send_msg('chat#id'..msg.to.id, 🌞 '..lang_text(msg.to.id, 'gifsT'), ok_cb, false)
                         elseif msg.to.type == 'channel' then
-                            send_msg('channel#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'gifsL'), ok_cb, false)
+                            send_msg('channel#id'..msg.to.id, '👿 '..lang_text(msg.to.id, 'gifsL'), ok_cb, false)
                         end
                     elseif matches[3] == 'disable' then
                         hash = 'gifs:'..msg.to.id
                         redis:set(hash, true)
                         if msg.to.type == 'chat' then
-                            send_msg('chat#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'noGifsT'), ok_cb, false)
+                            send_msg('chat#id'..msg.to.id, '👿 '..lang_text(msg.to.id, 'noGifsT'), ok_cb, false)
                         elseif msg.to.type == 'channel' then
-                            send_msg('channel#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'noGifsL'), ok_cb, false)
+                            send_msg('channel#id'..msg.to.id, '👿' ng_text(msg.to.id, 'noGifsL'), ok_cb, false)
                         end
                     end
                     return
@@ -254,17 +254,17 @@ local function run(msg, matches)
                         hash = 'links:'..msg.to.id
                         redis:del(hash)
                         if msg.to.type == 'chat' then
-                            send_msg('chat#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'LinksT'), ok_cb, false)
+                            send_msg('chat#id'..msg.to.id, '🌎 '..lang_text(msg.to.id, 'LinksT'), ok_cb, false)
                         elseif msg.to.type == 'channel' then
-                            send_msg('channel#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'LinksL'), ok_cb, false)
+                            send_msg('channel#id'..msg.to.id, '🌎 '..lang_text(msg.to.id, 'LinksL'), ok_cb, false)
                         end
                     elseif matches[3] == 'disable' then
                         hash = 'links:'..msg.to.id
                         redis:set(hash, true)
                         if msg.to.type == 'chat' then
-                            send_msg('chat#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'noLinksT'), ok_cb, false)
+                            send_msg('chat#id'..msg.to.id, '🌎 '..lang_text(msg.to.id, 'noLinksT'), ok_cb, false)
                         elseif msg.to.type == 'channel' then
-                            send_msg('channel#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'noLinksL'), ok_cb, false)
+                            send_msg('channel#id'..msg.to.id, '🌎 '..lang_text(msg.to.id, 'noLinksL'), ok_cb, false)
                     end
             end
             return
@@ -273,15 +273,15 @@ local function run(msg, matches)
                         hash = 'photo:'..msg.to.id
                         redis:del(hash)
                         if msg.to.type == 'chat' then
-                            send_msg('chat#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'photosT'), ok_cb, false)
+                            send_msg('chat#id'..msg.to.id, '💩 '..lang_text(msg.to.id, 'photosT'), ok_cb, false)
                         elseif msg.to.type == 'channel' then
-                            send_msg('channel#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'photosL'), ok_cb, false)
+                            send_msg('channel#id'..msg.to.id, '💩'..lang_text(msg.to.id, 'photosL'), ok_cb, false)
                         end
                     elseif matches[3] == 'disable' then
                         hash = 'photo:'..msg.to.id
                         redis:set(hash, true)
                         if msg.to.type == 'chat' then
-                            send_msg('chat#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'noPhotosT'), ok_cb, false)
+                            send_msg('chat#id'..msg.to.id, '💩 '..lang_text(msg.to.id, 'noPhotosT'), ok_cb, false)
                         elseif msg.to.type == 'channel' then
                             send_msg('channel#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'noPhotosL'), ok_cb, false)
                         end
